@@ -1,0 +1,31 @@
+package com.customer.services;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import com.customer.models.Seller;
+import com.customer.repository.SellerRepository;
+
+@Service
+public class SellerService implements UserDetailsService {
+
+	@Autowired
+	private SellerRepository sellerRepository;
+
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		Seller foundedUser = sellerRepository.findByUsername(username);
+		if (foundedUser == null)
+			return null;
+		String name = foundedUser.getUsername();
+		String pwd = foundedUser.getPassword();
+		return new User(name, pwd, new ArrayList<>());
+	}
+
+}

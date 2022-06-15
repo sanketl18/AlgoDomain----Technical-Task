@@ -1,0 +1,5 @@
+package com.seller.resources;
+
+public class SellerRepository {
+
+}

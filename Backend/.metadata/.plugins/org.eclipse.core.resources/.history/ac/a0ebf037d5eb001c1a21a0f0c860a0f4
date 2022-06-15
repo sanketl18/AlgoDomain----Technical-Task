@@ -1,0 +1,74 @@
+package com.product.service;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.product.repository.ProductRepository;
+import com.product.models.*;
+
+@SpringBootTest
+class ProductServiceTest {
+
+	@Mock
+	private ProductRepository productRepository;
+
+	@InjectMocks
+	private ProductService productService;
+
+	@Test
+	void showAllProductsTest() {
+		List<Product> drug = new ArrayList<>();
+
+		drug.add(new Drug(6L, "Pheno", 90,"tablet","antibiotics"));
+		drug.add(new Drug(11L, "Reno", 45,"tablet","antibiotics"));
+
+		when(drugRepository.findAll()).thenReturn(drug);
+		List<Drug> expected = drugService.showAllDrugs();
+		assertEquals(expected, drug);
+	}
+	
+	@Test
+	public void addDrugTest() throws ParseException {
+		Drug drug = new Drug(1L, "crocine", 10,"tablet","antibiotics");
+		when(drugRepository.save(drug)).thenReturn(drug);
+		assertEquals(drug, drugService.saveDrug(drug));
+	}
+
+	@Test
+	void deleteDrugTest() {
+		Drug drug = new Drug(25L, "crocine", 55,"tablet","antibiotics");
+		when(drugRepository.findById(drug.getId())).thenReturn(Optional.of(drug));
+		drugService.deleteDrug(drug.getId());
+		verify(drugRepository).deleteById(drug.getId());
+	}
+
+	@Test
+	public void findByIdTest() {
+		Drug drug = new Drug(25L, "crocine", 55,"tablet","antibiotics");
+		drugService.saveDrug(drug);
+		
+		verify(drugRepository).findById(drug.getId());
+	}
+
+	@Test
+	public void updateDrugTest() {
+		Drug drug = new Drug(1L, "crocine", 55,"tablet","antibiotics");
+		drugService.saveDrug(drug);
+		drug.setId(1L);
+		drug.setName("VitB");
+		drug.setPrice(55);
+		drugService.updateDrug(drug );
+		Assertions.assertThat(drug.getName()).isEqualTo("VitB");
+	}
+	
+
+
+}

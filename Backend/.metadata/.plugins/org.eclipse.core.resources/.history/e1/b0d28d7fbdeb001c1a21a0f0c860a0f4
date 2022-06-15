@@ -1,0 +1,82 @@
+package com.product.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.product.exception.ProductAlreadyExistException;
+import com.product.exception.ProductNotFoundException;
+import com.product.models.Product;
+import com.product.repository.ProductRepository;
+
+@Service
+public class ProductService {
+
+	@Autowired
+	private ProductRepository productRepository;
+
+	public Product saveProduct(Product product) {
+		Optional<Product> product1 = productRepository.findById(product.getId());
+		if (!product1.isPresent()) {
+			return productRepository.save(product);
+		} else {
+			throw new ProductAlreadyExistException("Product Already exist");
+		}
+	}
+
+	public Product updateProduct(Product product) {
+		return productRepository.save(product);
+	}
+
+	public void deleteProduct(long id) {
+		Optional<Product> product1 = productRepository.findById(id);
+		if (!product1.isPresent()) {
+			throw new ProductNotFoundException("Product does not exist " + id);
+		} else {
+			productRepository.deleteById(id);
+		}
+	}
+
+	public Optional<Product> findProductById(long id) {
+		Optional<Product> product1 = productRepository.findById(id);
+		if (!product1.isPresent()) {
+			throw new ProductNotFoundException("Product does not exist " + id);
+		} else {
+			return productRepository.findById(id);
+		}
+	}
+
+public List<Product> showAllProducts() {
+		
+		return productRepository.findAll();
+	}
+	
+	public Product searchByName(String name) {
+		Product product1 = productRepository.findByName(name);
+		if (product1 != null) {
+			return product1;
+		} else {
+			throw new ProductNotFoundException("Product does not exist " + name);
+		}
+	}
+	
+	public Product searchByType(String type) {
+		Product product2 = productRepository.findByType(type);
+		if (product2 != null) {
+			return product2;
+		} else {
+			throw new ProductNotFoundException("Product does not exist " + type);
+		}
+	}
+	
+	/*public Product searchByCategory(String category) {
+		Product product1 = productRepository.findByName(category);
+		if (product1 != null) {
+			return product1;
+		} else {
+			throw new ProductNotFoundException("Product does not exist " + category);
+		}
+	}*/
+}

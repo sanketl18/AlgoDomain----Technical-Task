@@ -1,0 +1,5 @@
+package com.seller.configuration;
+
+public class SecurityConfiguration {
+
+}

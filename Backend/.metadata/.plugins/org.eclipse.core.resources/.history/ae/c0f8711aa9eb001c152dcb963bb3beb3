@@ -1,0 +1,8 @@
+spring.application.name=Customer-service
+server.port= 8082
+spring.mvc.pathmatch.matching-strategy=ant-path-matcher
+
+
+Spring.data.mongodb.uri= mongodb+srv://sanketl18:sanket@pharmavy-managment-syst.7l3kp.mongodb.net/CustomerAlgoDomain
+
+

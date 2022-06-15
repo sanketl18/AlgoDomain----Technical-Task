@@ -1,0 +1,13 @@
+1655186701178	Delete element
+1655186817217	Rename package 'com.seller'
+1655186864803	Rename type 'SellerApplication'
+1655186881849	Rename package 'com.seller.configuration'
+1655186910504	Rename package 'com.seller.models'
+1655186927949	Rename package 'com.seller.repository'
+1655186943347	Rename package 'com.seller.resources'
+1655186956047	Rename package 'com.seller.services'
+1655186970835	Rename type 'Seller'
+1655186985277	Rename type 'SellerRepository'
+1655186999633	Rename type 'MainSellerController'
+1655187012402	Rename type 'SellerController'
+1655187030340	Rename type 'SellerService'
