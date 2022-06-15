@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Navigation } from "./Component/navigation";
 import { About } from "./Component/about";
 import SmoothScroll from "smooth-scroll";
+import JsonData from "./data/data.json";
 import "./App.css";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -12,7 +13,7 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 const App1 = () => {
   const [landingPageData, setLandingPageData] = useState({});
   useEffect(() => {
-    
+    setLandingPageData(JsonData);
   }, []);
 
   return (
