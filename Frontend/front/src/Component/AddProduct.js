@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link,useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import Sellerservice from "../Services/Sellerservice";
-import HeadeComponent from "./AdminHeadercom";
+
 import AdminHeader from "../Head&Foot/SellerHeader";
 import "../Style/Adddrug.css"
 

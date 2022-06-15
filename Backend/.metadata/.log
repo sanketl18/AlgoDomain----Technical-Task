@@ -5981,3 +5981,36 @@ java.util.concurrent.TimeoutException
 	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.flush(SendClasspathNotificationsJob.java:178)
 	at org.springframework.tooling.jdt.ls.commons.classpath.SendClasspathNotificationsJob.run(SendClasspathNotificationsJob.java:149)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:32:19.007
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:32:19.342
+!MESSAGE classpath=8 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:32:19.349
+!MESSAGE buffering callback sts4.classpath.EEIifTfx PaymentgatewayServerMicroservices false 8
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:32:19.355
+!MESSAGE executing callback sts4.classpath.EEIifTfx 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:32:19.422
+!MESSAGE executing callback sts4.classpath.EEIifTfx SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:32:26.865
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:32:26.881
+!MESSAGE classpath=127 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:32:26.894
+!MESSAGE buffering callback sts4.classpath.EEIifTfx PaymentgatewayServerMicroservices false 127
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:32:26.898
+!MESSAGE executing callback sts4.classpath.EEIifTfx 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2022-06-15 12:32:26.961
+!MESSAGE executing callback sts4.classpath.EEIifTfx SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2022-06-15 12:33:57.185
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)

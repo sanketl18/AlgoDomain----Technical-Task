@@ -19,7 +19,7 @@ import SellerHomePage from './Component/SellerHomePage';
 import Paytm from './Payment/Paytm';
 import Unauthorize from './Error/Unauthorize';
 import CustomerHomePage from './Component/CustomerHomePage';
-import Checkout from './StripCopm/Checkout';
+
 import PrivateRoute from './PrivateRoute/SellerPrivate';
 import DPrivateRoute from './PrivateRoute/CustomerPrivate';
 
@@ -63,8 +63,7 @@ function App() {
 
             {/*  payment*/}
             <Route path="/pay" element={<Paytm />} />
-            <Route path="/stripe/pay" element={<Checkout />} />
-             
+           
             
           </Routes>
         </div>

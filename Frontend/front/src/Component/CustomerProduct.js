@@ -10,6 +10,7 @@ const CustomerProduct = () => {
   const [SearchByname,setSearchByName] = useState('');
   const [SearchBytype,setSearchBytype] = useState('');
   const [SearchBycategory,setSearchBycategory] = useState('');
+  const [SearchByprice,setSearchByprice] = useState('');
   
 
   const init = () => {
@@ -87,7 +88,7 @@ size="60" height="100"  /> </div>
                 <td>{product.type}</td>
                 <td>{product.price}</td>
                 <td>
-                <Link className="btn btn-info sbc" to={`/order/${product.id}`}><i className="fa fa-shopping-cart cart"></i></Link>
+                <Link className="btn btn-info sbc" to={'/pay'}><i className="fa fa-shopping-cart cart"></i></Link>
          
                 </td>
               </tr>
