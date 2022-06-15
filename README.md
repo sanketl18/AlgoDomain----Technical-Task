@@ -5,6 +5,7 @@ Rest template is used to consume json data from other microservices. exchange of
 All the microservice are called using spring cloud Api gateway on a single port(9090).
 This web application follows polygate architecture for databases. I use both SQL and NoSQL type of datbases, which are MySQL and MongoDB.
 Appliction is protected with spring security and authentication is done using JWT (Java Web Token).
+Paytm is as a Payment Gateway in this application.
 Spring Boot (Backend) is integrated with React (Frontend) using Axios library .
 
 
